@@ -24,7 +24,7 @@ package org.dbunit.validator;
 
 /**
  * Utility class for compact code.
- * @author niels (<sf-user-name> AT users.sourceforge.net)
+ * @author niels (linux-java AT users.sourceforge.net)
  * @author Last changed by: niels
  * @version 03.01.2014
  * @since 2.4.10

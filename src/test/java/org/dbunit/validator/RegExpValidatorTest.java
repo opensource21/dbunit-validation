@@ -29,7 +29,7 @@ import java.util.regex.PatternSyntaxException;
 import org.junit.Test;
 
 /**
- * @author niels (<sf-user-name> AT users.sourceforge.net)
+ * @author niels (linux-java AT users.sourceforge.net)
  * @author Last changed by: niels
  * @version 01.01.2014
  * @since 2.4.10
