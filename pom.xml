@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.dbunit.validation</groupId>
     <artifactId>dbunit-validation</artifactId>
-    <version>0.1-SNAPSHOT</version>
+    <version>0.1</version>
     <name>DbUnit Validation</name>
     <description>Extends the possibilities of validation.</description>
 
@@ -35,11 +35,26 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -75,4 +90,12 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github.repository</id>
+            <name>Github Maven Repository</name>
+            <url>file:///home/niels/seu/github/opensource21.github.com/releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
