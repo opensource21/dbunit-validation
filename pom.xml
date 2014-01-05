@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.dbunit.validation</groupId>
     <artifactId>dbunit-validation</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
     <name>DbUnit Validation</name>
     <description>Extends the possibilities of validation.</description>
 
