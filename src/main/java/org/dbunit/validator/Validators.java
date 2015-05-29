@@ -37,6 +37,16 @@ public class Validators {
     }
 
     /**
+     * Creates new {@link PropertyHolder}.
+     * @author niels
+     * @since 2.4.0
+     * @param variableName
+     */
+    public static NumberPropertyHolder nprop(String variableName) {
+        return new NumberPropertyHolder(variableName);
+    }
+    
+    /**
      * Create a validator which checks that the number is greater than the
      * given value.
      * @author niels
@@ -69,6 +79,44 @@ public class Validators {
      */
     public static RegExpValidator re(String regexp) {
         return new RegExpValidator(regexp);
+    }
+    
+    /**
+     * Create a validator which checks that the number is greater than the
+     * given value.
+     * @author niels
+     * @since 2.4.10
+     * @param value the limit.
+     * @param variableName the name where the actualvalue should be hold.
+     * @return the validator.
+     */
+    public static GreaterThan gt(long value, String variableName) {
+        return new GreaterThan(Long.valueOf(value), variableName);
+    }
+
+    /**
+     * Create a validator which checks that the number is greater than the
+     * given value.
+     * @author niels
+     * @since 2.4.10
+     * @param value the limit.
+     * @param variableName the name where the actualvalue should be hold.
+     * @return the validator.
+     */
+    public static GreaterThan gt(double value, String variableName) {
+        return new GreaterThan(Double.valueOf(value), variableName);
+    }
+
+    /**
+     * Create a validator which checks that the text match the regular expression.
+     * @author niels
+     * @since 2.4.10
+     * @param regexp the regular expression.
+     * @param variableName the name where the actualvalue should be hold.
+     * @return the validator.
+     */
+    public static RegExpValidator re(String regexp, String variableName) {
+        return new RegExpValidator(regexp, variableName);
     }
 
 }

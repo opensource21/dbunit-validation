@@ -25,9 +25,16 @@ import java.util.regex.Pattern;
 public class RegExpValidator implements IValidator<String> {
 
     private final Pattern pattern;
+    
+    private final String variableName;
 
     public RegExpValidator(String regExp) {
-        pattern = Pattern.compile(regExp);
+        this(regExp, null);
+    }
+    
+    public RegExpValidator(String regExp, String variableName) {
+        this.pattern = Pattern.compile(regExp);
+        this.variableName = variableName;
     }
 
     @Override
@@ -35,6 +42,10 @@ public class RegExpValidator implements IValidator<String> {
         return pattern.matcher(currentValue).matches();
     }
 
+    @Override
+    public String getVariableName() {
+        return variableName;
+    }
 
     @Override
     public String toString() {

@@ -26,54 +26,39 @@ package org.dbunit.validator;
  * @author niels
  *
  */
-public class GreaterThan extends Number implements IValidator<Number>   {
+public class GreaterThan extends NumberValidator {
 
     /**
      *
      */
     private static final long serialVersionUID = -5948418480883392859L;
-    private final Number expectedValue;
+    
 
+    
     /**
      *
      */
     public GreaterThan(Number value) {
-        this.expectedValue = value;
+        this(value, null);
+        
     }
+    
+    /**
+    *
+    */
+   public GreaterThan(Number value, String variableName) {
+       super(value, variableName);
+       
+   }
+    
 
     @Override
     public boolean isValid(Number currentValue) {
-        if (currentValue == null || expectedValue == null) {
+        if (currentValue == null || getExpectedValue() == null) {
             return false;
         }
-        return currentValue.doubleValue() > expectedValue.doubleValue();
+        return currentValue.doubleValue() > getExpectedValue().doubleValue();
     }
-
-    @Override
-    public int intValue() {
-        return expectedValue.intValue() + 1;
-    }
-
-    @Override
-    public long longValue() {
-        return expectedValue.longValue() + 1;
-    }
-
-    @Override
-    public float floatValue() {
-        return expectedValue.floatValue() + 1;
-    }
-
-    @Override
-    public double doubleValue() {
-        return expectedValue.doubleValue() + 1;
-    }
-
-    @Override
-    public String toString() {
-        return "GreaterThan " + expectedValue ;
-    }
-
 
 
 }

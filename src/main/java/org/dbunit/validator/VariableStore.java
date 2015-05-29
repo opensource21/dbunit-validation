@@ -18,23 +18,24 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
+
 package org.dbunit.validator;
 
 /**
- * @author niels
+ * Store for  variables.
+ * @author niels (<sf-user-name> AT users.sourceforge.net)
+ * @author Last changed by: niels
+ * @version 29.05.2015
+ * @since 2.4.10
  *
  */
-//TODO implement more Validators.
-public interface IValidator<T> {
+public class VariableStore {
 
-    public boolean isValid(T currentValue);
-    
     /**
-     * Return the name of a variable.
-     * @author niels
-     * @since 2.4.0
-     * @return the name of a variable or null.
+     * 
      */
-    public String getVariableName(); 
+    public VariableStore() {
+        // TODO Auto-generated constructor stub
+    }
 
 }

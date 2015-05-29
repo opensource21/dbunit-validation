@@ -18,23 +18,40 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  *
  */
+
 package org.dbunit.validator;
 
 /**
- * @author niels
+ * Holder of a propertyname.
+ * @author niels (<sf-user-name> AT users.sourceforge.net)
+ * @author Last changed by: niels
+ * @version 29.05.2015
+ * @since 2.4.10
  *
  */
-//TODO implement more Validators.
-public interface IValidator<T> {
-
-    public boolean isValid(T currentValue);
+public class NumberPropertyHolder extends NumberValidator implements PropertyHolder {
+    
     
     /**
-     * Return the name of a variable.
-     * @author niels
-     * @since 2.4.0
-     * @return the name of a variable or null.
+     * 
      */
-    public String getVariableName(); 
+    private static final long serialVersionUID = 265538172935110114L;
+    
+    /**
+     * Store a number in the variable-name.
+     * @param variableName
+     */
+    public NumberPropertyHolder(String variableName) {
+        super(0, variableName);
+    }
+
+   
+    @Override
+    public boolean isValid(Number currentValue) {
+        //TODO this is a hack.
+        throw new RuntimeException("Don't call this method directly");
+    }
+    
+    
 
 }

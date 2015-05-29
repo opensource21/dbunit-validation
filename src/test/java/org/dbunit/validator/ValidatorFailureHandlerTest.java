@@ -56,7 +56,7 @@ public class ValidatorFailureHandlerTest {
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        testee = new ValidatorFailureHandler(failureHandler);
+        testee = new ValidatorFailureHandler(failureHandler);        
     }
 
     /**
@@ -146,6 +146,27 @@ public class ValidatorFailureHandlerTest {
 
         //Assert
         verify(failureHandler).getAdditionalInfo(expectedTable, actualTable, 0, columnName);
+    }
+    
+    /**
+     * Test storage of variables.
+     */
+    @Test
+    public void testStoreVariables() {
+      //Arrange
+        final Difference diff = mock(Difference.class);
+        when(diff.getExpectedValue()).thenReturn(new GreaterThan(3L, "varName"));
+        when(diff.getActualValue()).thenReturn(4L);
+        testee.handle(diff);
+        verify(failureHandler, times(0)).handle(diff);
+        final Difference diff2 = mock(Difference.class);
+        when(diff2.getExpectedValue()).thenReturn(new NumberPropertyHolder("varName"));
+        when(diff2.getActualValue()).thenReturn(4L);
+        //Act
+        testee.handle(diff2);        
+        //Assert
+        verify(failureHandler, times(0)).handle(diff2);
+
     }
 
 }
