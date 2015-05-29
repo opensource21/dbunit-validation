@@ -23,22 +23,22 @@ public class GreaterThanTest {
 
     @Test
     public void testIntValue() {
-        assertThat(testee.intValue()).isEqualTo(3);
+        assertThat(testee.intValue()).isEqualTo(2);
     }
 
     @Test
     public void testLongValue() {
-        assertThat(testee.longValue()).isEqualTo(3L);
+        assertThat(testee.longValue()).isEqualTo(2L);
     }
 
     @Test
     public void testFloatValue() {
-        assertThat(testee.floatValue()).isEqualTo(3.1f);
+        assertThat(testee.floatValue()).isEqualTo(2.1f);
     }
 
     @Test
     public void testDoubleValue() {
-        assertThat(testee.doubleValue()).isEqualTo(3.1d);
+        assertThat(testee.doubleValue()).isEqualTo(2.1d);
     }
 
     @Test

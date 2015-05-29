@@ -32,22 +32,22 @@ public abstract class NumberValidator extends Number implements IValidator<Numbe
     
     @Override
     public int intValue() {
-        return expectedValue.intValue() + 1;
+        return expectedValue.intValue();
     }
 
     @Override
     public long longValue() {
-        return expectedValue.longValue() + 1;
+        return expectedValue.longValue();
     }
 
     @Override
     public float floatValue() {
-        return expectedValue.floatValue() + 1;
+        return expectedValue.floatValue();
     }
 
     @Override
     public double doubleValue() {
-        return expectedValue.doubleValue() + 1;
+        return expectedValue.doubleValue();
     }
 
     @Override
