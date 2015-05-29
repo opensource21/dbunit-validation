@@ -1,5 +1,7 @@
 package org.dbunit.validator;
 
+import java.util.Hashtable;
+
 /**
  * Marker interface that it is a property-holder.
  * @author niels (<sf-user-name> AT users.sourceforge.net)
@@ -10,12 +12,5 @@ package org.dbunit.validator;
  */
 public interface PropertyHolder {
 
-    /**
-     * Return the name of a variable.
-     * @author niels
-     * @since 2.4.0
-     * @return the name of a variable or null.
-     */
-    public String getVariableName(); 
-    
+    final Hashtable<String, Object> STORAGE = new Hashtable<String, Object>();    
 }

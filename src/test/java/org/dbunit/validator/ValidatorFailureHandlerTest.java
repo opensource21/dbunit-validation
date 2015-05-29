@@ -21,6 +21,7 @@
 
 package org.dbunit.validator;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -157,16 +158,11 @@ public class ValidatorFailureHandlerTest {
         final Difference diff = mock(Difference.class);
         when(diff.getExpectedValue()).thenReturn(new GreaterThan(3L, "varName"));
         when(diff.getActualValue()).thenReturn(4L);
-        testee.handle(diff);
-        verify(failureHandler, times(0)).handle(diff);
-        final Difference diff2 = mock(Difference.class);
-        when(diff2.getExpectedValue()).thenReturn(new NumberPropertyHolder("varName"));
-        when(diff2.getActualValue()).thenReturn(4L);
         //Act
-        testee.handle(diff2);        
+        testee.handle(diff);
         //Assert
-        verify(failureHandler, times(0)).handle(diff2);
-
+        verify(failureHandler, times(0)).handle(diff);
+        assertThat(PropertyHolder.STORAGE).containsEntry("varName", 4L);
     }
 
 }

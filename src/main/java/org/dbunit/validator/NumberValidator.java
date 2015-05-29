@@ -17,19 +17,18 @@ public abstract class NumberValidator extends Number implements IValidator<Numbe
     }
 
 
+    public NumberValidator(Number value, String variableName) {
+        this.expectedValue = value;
+        this.variableName = variableName;
+    }
+    
+
     /**
      * @return the expectedValue
      */
     protected Number getExpectedValue() {
         return expectedValue;
     }
-
-
-    public NumberValidator(Number value, String variableName) {
-        this.expectedValue = value;
-        this.variableName = variableName;
-    }
-    
     
     @Override
     public int intValue() {
